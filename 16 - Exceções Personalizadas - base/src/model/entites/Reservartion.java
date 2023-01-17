@@ -2,24 +2,27 @@ package model.entites;
 
 import java.time.Duration;
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 
 public class Reservartion {
-	private Integer roomNUmber;
+	private Integer roomNumber;
 	private LocalDate checkIn;
 	private LocalDate checkOut;
 
-	public Reservartion(Integer roomNUmber, LocalDate checkIn, LocalDate checkOut) {
-		this.roomNUmber = roomNUmber;
+	private static DateTimeFormatter dtmf1 = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+
+	public Reservartion(Integer roomNumber, LocalDate checkIn, LocalDate checkOut) {
+		this.roomNumber = roomNumber;
 		this.checkIn = checkIn;
 		this.checkOut = checkOut;
 	}
 
-	public Integer getRoomNUmber() {
-		return roomNUmber;
+	public Integer getroomNumber() {
+		return roomNumber;
 	}
 
-	public void setRoomNUmber(Integer roomNUmber) {
-		this.roomNUmber = roomNUmber;
+	public void setroomNumber(Integer roomNumber) {
+		this.roomNumber = roomNumber;
 	}
 
 	public LocalDate getCheckIn() {
@@ -33,5 +36,16 @@ public class Reservartion {
 	public long duration() {
 		Duration t1 = Duration.between(checkIn, checkOut);
 		return t1.toDays();
+	}
+
+	public void updateDates(LocalDate checkIn, LocalDate checkOut) {
+		this.checkIn = checkIn;
+		this.checkOut = checkOut;
+	}
+
+	@Override
+	public String toString() {
+		return "Room " + this.roomNumber + ", check-in" + this.checkIn.format(dtmf1) + ", check-Out"
+				+ this.checkOut.format(dtmf1) + this.duration() + " nigths";
 	}
 }
