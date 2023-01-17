@@ -1,0 +1,15 @@
+package entities;
+
+public class OutsorcedEmployee extends Employee {
+	private Double additonalCharge;
+
+	public OutsorcedEmployee() {
+		super();
+	}
+
+	public OutsorcedEmployee(String name, Integer hours, Double valuePerHour, Double additonalCharge) {
+		super(name, hours, valuePerHour);
+		this.additonalCharge = additonalCharge;
+	}
+
+}

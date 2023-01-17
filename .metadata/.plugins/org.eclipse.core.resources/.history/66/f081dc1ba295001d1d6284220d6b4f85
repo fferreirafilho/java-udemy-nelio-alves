@@ -1,0 +1,29 @@
+package entities;
+
+public class Employee {
+
+	protected String name;
+	protected Integer id;
+	protected Double salary;
+
+	public Employee() {
+
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public Integer getId() {
+		return id;
+	}
+
+	public Double getSalary() {
+		return salary;
+	}
+
+}

@@ -1,0 +1,10 @@
+package entities;
+
+public class Rectangle {
+	public double widht;
+	public double heigth;
+
+	public double area() {
+
+	}
+}

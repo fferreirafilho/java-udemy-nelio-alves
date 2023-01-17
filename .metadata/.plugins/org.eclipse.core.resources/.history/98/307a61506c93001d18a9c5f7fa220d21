@@ -1,0 +1,22 @@
+package application;
+
+import java.util.Locale;
+import java.util.Scanner;
+
+public class Program {
+
+	public static void main(String[] args) {
+		Locale.setDefault(Locale.US);
+		Scanner sc = new Scanner(System.in);
+
+		System.out.println("Enter account number: ");
+		int number = sc.nextInt();
+		System.out.println("Enter account holder: ");
+		int holder = sc.nextInt();
+		System.out.println("Is there initial deposit (y/n)? ");
+		String confirm = sc.nextLine();
+
+		sc.close();
+	}
+
+}

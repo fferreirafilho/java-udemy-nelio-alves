@@ -1,0 +1,15 @@
+package entities;
+
+import java.time.LocalDateTime;
+
+import entities.enums.OrderStatus;
+
+public class Order {
+	private Integer id;
+	private LocalDateTime moment;
+	private OrderStatus status;
+
+	public Order() {
+	}
+
+}

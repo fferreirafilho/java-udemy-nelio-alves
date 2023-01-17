@@ -1,0 +1,31 @@
+package application;
+
+import java.util.Locale;
+import java.util.Scanner;
+
+public class Program {
+
+	public static void main(String[] args) {
+		Locale.setDefault(Locale.US);
+		Scanner sc = new Scanner(System.in);
+
+		System.out.print("Enter the number of employees: ");
+		int n = sc.nextInt();
+
+		for (int i = 1; i <= n; i++) {
+			System.out.println("Employee #" + i + " data:");
+			System.out.print("Outsorced (y/n)? ");
+			char outs = sc.next().charAt(0);
+			System.out.print("Name: ");
+			String name = sc.nextLine();
+
+			if (outs == 'y') {
+				System.out.print("Additional charge: ");
+				double addCharge = sc.nextDouble();
+			}
+		}
+
+		sc.close();
+	}
+
+}

@@ -1,0 +1,9 @@
+package entities;
+
+public class Employee {
+
+	protected String name;
+	protected Integer id;
+	protected Double salary;
+
+}

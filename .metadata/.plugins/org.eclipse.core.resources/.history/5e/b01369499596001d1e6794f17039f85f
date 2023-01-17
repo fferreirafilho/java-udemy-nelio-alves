@@ -1,0 +1,10 @@
+package entities;
+
+public class OutsorcedEmployee extends Employee {
+	private Double additonalCharge;
+
+	public OutsorcedEmployee() {
+		super();
+	}
+
+}

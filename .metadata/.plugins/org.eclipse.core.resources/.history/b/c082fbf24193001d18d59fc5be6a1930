@@ -1,0 +1,14 @@
+package entities;
+
+public class Rectangle {
+	public double widht;
+	public double heigth;
+
+	public double area() {
+		return this.widht * this.heigth;
+	}
+
+	public double Perimeter() {
+		
+	}
+}

@@ -1,0 +1,45 @@
+package application;
+
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.util.Locale;
+import java.util.Scanner;
+
+import entities.Department;
+import entities.Worker;
+import entities.enums.WorkerLevel;
+
+public class Program {
+
+	public static void main(String[] args) {
+		DateTimeFormatter fmt1 = DateTimeFormatter.ofPattern("dd/MM/yyy");
+		Locale.setDefault(Locale.US);
+		Scanner sc = new Scanner(System.in);
+
+		System.out.print("Enter department's name: ");
+		String departmentName = sc.nextLine();
+		System.out.println("Enter worker data: ");
+		System.out.print("Name: ");
+		String workerName = sc.nextLine();
+		System.out.print("Level: ");
+		String workerLevel = sc.nextLine();
+		System.out.print("Base salary: ");
+		Double workerBaseSalary = sc.nextDouble();
+		Worker worker = new Worker(workerName, WorkerLevel.valueOf(workerLevel), workerBaseSalary,
+				new Department(departmentName));
+
+		System.out.print("How many contracts to this worker? ");
+		Integer numberContracts = sc.nextInt();
+		for (Integer i = 1; i <= numberContracts; i++) {
+			System.out.println("Enter contract number #" + i + "data: ");
+			System.out.print("Date (DD/MM/YYYY): ");
+			LocalDate contractDate = (LocalDate) fmt1.parse(sc.next());
+			System.out.print("Value per hour: ");
+			Double valuePerHour = sc.nextDouble();
+			System.out.print("Durantion (hours): ");
+			Integer hour = sc.nextInt();
+		}
+		sc.close();
+	}
+
+}
